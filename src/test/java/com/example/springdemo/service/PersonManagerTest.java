@@ -17,7 +17,17 @@ public class PersonManagerTest {
 
 	@Test
 	public void sayHelloTest() {
-		assertEquals("I'm Zosia!", pm.sayName());
+		assertEquals("I'm Zosia!", pm.checkChild());
+	}
+
+	@Test
+	public void testInjection() {
+
+	}
+	@Test
+	public void justShowParentsName ()
+	{
+		pm.checkParentsName();
 	}
 
 }

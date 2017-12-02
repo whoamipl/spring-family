@@ -8,10 +8,27 @@
 	<!-- Scans within the base package of the application for @Components to 
 		configure as beans -->
 	<context:component-scan base-package="com.example.springdemo.service" />
+	<context:component-scan base-package="com.example.springdemo.domain"/>
 
 	<bean id="zosia" class="com.example.springdemo.domain.Person">
 		<property name="firstName" value="Zosia" />
 		<property name="yob" value="1987" />
 	</bean>
+	<bean id="mama"  class="com.example.springdemo.domain.Parent">
+		<property name="firstName" value="Madzia"/>
+		<property name="yob" value="1981"/>
 
+	</bean>
+	<bean id="tata" class="com.example.springdemo.domain.Parent">
+		<property name="firstName" value="Tadzio"></property>
+		<property name="yob" value="1981"></property>
+	</bean>
+	<bean id="babcia"  class="com.example.springdemo.domain.Parent">
+		<property name="firstName" value="Kunegunda"/>
+		<property name="yob" value="1902"/>
+	</bean>
+	<bean id="dziadek" class="com.example.springdemo.domain.Parent">
+		<property name="firstName" value="Alfons"></property>
+		<property name="yob" value="1901"></property>
+	</bean>
 </beans>
