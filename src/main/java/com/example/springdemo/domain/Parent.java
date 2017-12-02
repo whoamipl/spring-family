@@ -9,14 +9,20 @@ import java.util.List;
 
 public class Parent {
 
+    private Parent myMom;
+    private Parent myDad;
+    private Parent myMomInLaw;
+    private Parent myDadInLaw;
 
     @Autowired
-    private List<Child> dziecko1;
+    private List<Child> list;
 
     public String getChild() {
-        return "dupa";
+        return list
+                .stream()
+                .map(childName -> childName.getFirstName() + " ")
+                .reduce("Dzieci: ", (acc, name) -> acc + name);
     }
-
     private String firstName;
     private String yob;
 
@@ -35,4 +41,38 @@ public class Parent {
     public String getYob() {
         return yob;
     }
+
+    public void setMyMom(Parent myMom) {
+        this.myMom = myMom;
+    }
+
+    public Parent getMyMom() {
+        return myMom;
+    }
+
+    public void setMyDad(Parent myDad) {
+        this.myDad = myDad;
+    }
+
+    public Parent getMyDad() {
+        return myDad;
+    }
+
+    public void setMyMomInLaw(Parent myMomInLaw) {
+        this.myMomInLaw = myMomInLaw;
+    }
+
+    public Parent getMyMomInLaw() {
+        return myMomInLaw;
+    }
+
+    public void setMyDadInLaw(Parent myDadInLaw) {
+        this.myDadInLaw = myDadInLaw;
+    }
+
+    public Parent getMyDadInLaw() {
+        return myDadInLaw;
+    }
+
+
 }

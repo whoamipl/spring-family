@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<!-- Scans within the base package of the application for @Components to 
 		configure as beans -->
 	<context:component-scan base-package="com.example.springdemo.service" />
 	<context:component-scan base-package="com.example.springdemo.domain"/>
-
+	<util:list id="list" value-type="com.example.springdemo.domain.Child">
+		<ref bean="brajanek"></ref>
+		<ref bean="dzesika"></ref>
+	</util:list>
 	<bean id="zosia" class="com.example.springdemo.domain.Person">
 		<property name="firstName" value="Zosia" />
+		<property name="yob" value="1987" />
+	</bean>
+	<bean id="brajanek" class="com.example.springdemo.domain.Child">
+		<property name="firstName" value="Brajanek" />
+		<property name="yob" value="1987" />
+	</bean>
+	<bean id="dzesika" class="com.example.springdemo.domain.Child">
+		<property name="firstName" value="Dżesika" />
 		<property name="yob" value="1987" />
 	</bean>
 	<bean id="mama"  class="com.example.springdemo.domain.Parent">
 		<property name="firstName" value="Madzia"/>
 		<property name="yob" value="1981"/>
-
+		<property name="myMom" ref="babcia"></property>
+		<property name="myDad" ref="dziadek"></property>
 	</bean>
 	<bean id="tata" class="com.example.springdemo.domain.Parent">
 		<property name="firstName" value="Tadzio"></property>
 		<property name="yob" value="1981"></property>
+		<property name="myMomInLaw" ref="babcia"></property>
+		<property name="myDadInLaw" ref="dziadek"></property>
 	</bean>
 	<bean id="babcia"  class="com.example.springdemo.domain.Parent">
 		<property name="firstName" value="Kunegunda"/>

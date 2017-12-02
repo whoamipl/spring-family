@@ -25,9 +25,11 @@ public class PersonManagerTest {
 
 	}
 	@Test
-	public void justShowParentsName ()
+	public void justShowParentsNameAndChilds ()
 	{
 		pm.checkParentsName();
+		System.out.println(pm.mama.getChild());
+		System.out.println(pm.tata.getChild());
 	}
 
 }

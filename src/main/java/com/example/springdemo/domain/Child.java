@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class Child {
 
-
     @Autowired
     @Qualifier("mama")
     Parent mom;
@@ -15,6 +14,8 @@ public class Child {
     @Autowired
     @Qualifier("tata")
     Parent dad;
+    private String firstName;
+    private String yob;
 
     public Parent getMom() {
         return mom;
@@ -24,12 +25,19 @@ public class Child {
         this.mom = mom;
     }
 
-    public String getFirstName() {
-        return "child";
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public void setYob(String yob) {
+        this.yob = yob;
+    }
 
-    private String firstName;
-    private int yob;
+    public String getYob() {
+        return yob;
+    }
 }

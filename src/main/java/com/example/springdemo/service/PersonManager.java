@@ -2,10 +2,10 @@ package com.example.springdemo.service;
 
 
 import com.example.springdemo.domain.Parent;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import com.example.springdemo.domain.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Component
 public class PersonManager {
@@ -21,7 +21,8 @@ public class PersonManager {
 	}
 
 	public void checkParentsName() {
-		System.out.println("Mama: "+mama.getFirstName() + "Tata: "+ tata.getFirstName());
+
+		System.out.println("Mama: "+mama.getFirstName() + " Tata: "+ tata.getFirstName());
 	}
 
 }
